@@ -151,8 +151,8 @@ export const HomePage = () => {
                   <Image
                     alt={item.title}
                     src={item.url}
-                    width={item.width}
-                    height={item.height}
+                    width={800}
+                    height={600}
                     style={{
                       width: "100%",
                       height: "auto",

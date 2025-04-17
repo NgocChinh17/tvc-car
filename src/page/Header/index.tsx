@@ -10,11 +10,9 @@ import Logo from "@assets/image/Logo-TC-MOTOR.HYUNDAI-final-Copy.png";
 
 const listMenu = [
   { label: "TRANG CHỦ", key: "1", path: "/" },
-  { label: "GIỚI THIỆU", key: "2", path: "/" },
-  { label: "TRẢ GÓP", key: "3", path: "#" },
-  { label: "BẢNG GIÁ", key: "4", path: "#" },
-  { label: "TIN TỨC", key: "5", path: "#" },
-  { label: "LIÊN HỆ", key: "6", path: "#" },
+  { label: "GIỚI THIỆU", key: "2", path: "/introduce" },
+  { label: "BẢNG GIÁ", key: "3", path: "/priceList" },
+  { label: "ĐĂNG KÝ LÁI XE THỬ", key: "4", path: "/driveCar" },
 ];
 
 export const HeaderPage = () => {
