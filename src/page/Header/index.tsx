@@ -10,7 +10,7 @@ import Logo from "@assets/image/Logo-TC-MOTOR.HYUNDAI-final-Copy.png";
 
 const listMenu = [
   { label: "TRANG CHỦ", key: "1", path: "/" },
-  { label: "GIỚI THIỆU", key: "2", path: "/Introduction" },
+  { label: "GIỚI THIỆU", key: "2", path: "/" },
   { label: "TRẢ GÓP", key: "3", path: "#" },
   { label: "BẢNG GIÁ", key: "4", path: "#" },
   { label: "TIN TỨC", key: "5", path: "#" },
