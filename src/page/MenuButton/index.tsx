@@ -19,6 +19,7 @@ const listButton = [
     title: "Mua Xe Trả Góp",
     path: "#",
     type: "primary" as "primary" | "default" | "link" | "text" | "dashed",
+    danger: true
   },
   {
     id: 2,
@@ -26,7 +27,6 @@ const listButton = [
     title: "Đăng Ký Lái Thử",
     path: "#",
     type: "primary" as "primary" | "default" | "link" | "text" | "dashed",
-    danger: true
   },
   {
     id: 3,
@@ -34,6 +34,7 @@ const listButton = [
     title: "Tính Phí Lăn Bánh",
     path: "#",
     type: "primary" as "primary" | "default" | "link" | "text" | "dashed",
+    danger: true
   },
 ];
 

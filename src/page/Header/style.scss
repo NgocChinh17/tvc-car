@@ -1,10 +1,66 @@
 :where(.css-dev-only-do-not-override-1d4w9r2).ant-menu-horizontal {
     line-height: 46px;
     border: 0;
-    border-bottom: none !important  ;
+    border-bottom: none !important;
     box-shadow: none;
 }
 
 .home-menu-item {
     padding-left: 0 !important;
-  }
+}
+
+.menu-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+}
+
+.image-logo {
+    width: 300px;
+    height: auto;
+}
+
+.title-logo {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.render-menu {
+    width: 100% !important;
+}
+
+.menu-mobile-button {
+    display: none;
+}
+
+.menu-mobile-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none !important;
+    }
+
+    .mb {
+        display: block !important;
+    }
+
+    .menu-mobile-button {
+        display: block !important;
+    }
+
+    .image-logo {
+        width: 200px;
+    }
+}
