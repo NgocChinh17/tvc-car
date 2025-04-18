@@ -185,7 +185,9 @@ const PriceTitle = () => {
             <p style={{ fontSize: 18, fontWeight: 500 }}>
               Anh / Chị gọi để được tư vấn:
             </p>
-            <Button type="primary" danger icon={<PhoneOutlined />}>
+            <Button type="primary" danger icon={<PhoneOutlined />}
+               onClick={() => (window.location.href = `tel:${car.phone}`)}
+            >
               {car.phone}
             </Button>
           </Space>
