@@ -3,6 +3,7 @@ import { FooterPage } from "@/page/Footer";
 import { HeaderPage } from "@/page/Header";
 
 import '../../app/globals.css'
+import ZaloFloatingButton from "@/components/ChatZalo";
 
 export default function RootLayout({
   children,
@@ -18,6 +19,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <HeaderPage />
           {children}
+          <ZaloFloatingButton/>
           <FooterPage />
         </StyledComponentsRegistry>
       </body>
