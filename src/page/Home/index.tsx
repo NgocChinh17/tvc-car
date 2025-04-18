@@ -132,7 +132,7 @@ export const HomePage = () => {
   return (
     <div className="container">
         <MenuButton/>
-      <div style={{ maxWidth: 1150, margin: "0 auto" }}>
+      <div>
         <Divider
           orientation="center"
           style={{ borderColor: "#7cb305", fontWeight: "bold" }}
@@ -141,7 +141,7 @@ export const HomePage = () => {
         </Divider>
       </div>
 
-      <div style={{ maxWidth: 1150, margin: "0 auto", overflowX: "hidden" }}>
+      <div style={{marginBlock: 20}}>
         <Row gutter={[16, 16]}>
           {imageList.map((item) => (
             <Col key={item.id} xs={24} sm={12} md={8} lg={6}>

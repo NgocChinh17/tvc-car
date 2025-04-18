@@ -25,7 +25,7 @@ const slides = [
   { src: Slide4, alt: "slide4" },
   { src: slider5, alt: "slider5" },
   { src: slider6, alt: "slide6" },
-  { src: slider7, alt: "slide7" },
+  { src: slider7, alt: "slide7" }, 
 ];
 
 const SliderComponent = () => {

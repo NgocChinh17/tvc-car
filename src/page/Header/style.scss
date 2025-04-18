@@ -5,6 +5,16 @@
     box-shadow: none;
 }
 
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+    width: 100% !important;
+    margin-bottom: 30px;
+}
+
 .home-menu-item {
     padding-left: 0 !important;
 }
@@ -32,7 +42,6 @@
     align-items: center;
     font-family: 18px;
     font-weight: 500;
-    margin-bottom: 10px;
 }
 
 .render-menu {
