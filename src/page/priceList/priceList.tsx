@@ -39,7 +39,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai i10 tại Phạm Hùng Đà Nẵng",
     image: grandi10,
     tableTitle: "Hyundai Grand i10 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Grand I10 1.2AT", price: 435000000 },
       { key: "2", name: "Grand I10 1.2AT STD", price: 405000000 },
@@ -53,7 +53,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Venue tại Phạm Hùng Đà Nẵng",
     image: venue,
     tableTitle: "Hyundai Venue 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Venue 1.0 T_GDI - đặt biệt", price: 539000000 },
       { key: "2", name: "Venue 1.0 T-GDI", price: 499000000 },
@@ -63,7 +63,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Accent tại Phạm Hùng Đà Nẵng",
     image: accent,
     tableTitle: "Hyundai Accent 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Accent 1.5 AT cao cấp", price: 569000000 },
       { key: "2", name: "Accent 1.5 AT đặt biệt", price: 529000000 },
@@ -75,7 +75,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Elantra tại Phạm Hùng Đà Nẵng",
     image: elantra,
     tableTitle: "Hyundai Elantra 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Elantra N Line", price: 769000000 },
       { key: "2", name: "Elantra 2.0 AT", price: 699000000 },
@@ -87,7 +87,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Creta tại Phạm Hùng Đà Nẵng",
     image: creta,
     tableTitle: "Hyundai Creta 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Creta 1.5 Cao cấp (1 tone)", price: 699000000 },
       { key: "2", name: "Creta 1.5 Đặt biệt", price: 650000000 },
@@ -98,7 +98,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Tucson tại Phạm Hùng Đà Nẵng",
     image: tucson,
     tableTitle: "Hyundai Tucson 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "New Tucson 1.6 Turbo", price: 979000000 },
       { key: "2", name: "New Tucson 2.0 dầu đặt biệt", price: 989000000 },
@@ -110,7 +110,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Santafe tại Phạm Hùng Đà Nẵng",
     image: santa,
     tableTitle: "Hyundai Santafe 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Santafe Exclusive", price: 1069000000 },
       { key: "2", name: "Santafe Prestige", price: 1265000000 },
@@ -122,7 +122,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Custin tại Phạm Hùng Đà Nẵng",
     image: custin,
     tableTitle: "Hyundai Custin 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Custin 2.0 Turbo cao cấp", price: 999000000 },
       { key: "2", name: "Custin 1.5 Turbo cao cấp", price: 950000000 },
@@ -134,7 +134,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Palisade tại Phạm Hùng Đà Nẵng",
     image: palisade,
     tableTitle: "Hyundai Palisade 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Palisade Prestige (6 chỗ)", price: 999000000 },
       { key: "2", name: "Palisade Prestige  (7 chỗ)", price: 950000000 },
@@ -146,7 +146,7 @@ const carPriceList: CarModel[] = [
     title: "Bảng giá xe Hyundai Stargazer tại Phạm Hùng Đà Nẵng",
     image: Stargazer,
     tableTitle: "Hyundai Stargazer 2025",
-    phone: "0906557408",
+    phone: "0904570323",
     data: [
       { key: "1", name: "Stargazer X cao cấp", price: 599000000 },
       { key: "2", name: "Stargazer X", price: 599000000 },

@@ -21,7 +21,7 @@ const supportItems = [
     buttons: [
       {
         icon: <PhoneOutlined />,
-        text: "0906557408",
+        text: "0904570323",
       },
       {
         icon: <EditOutlined />,

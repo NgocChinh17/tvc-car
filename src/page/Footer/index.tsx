@@ -9,7 +9,7 @@ const footerData = [
       "Địa Chỉ: 286 Phạm Hùng, Xã Hòa Phước, Huyện Hòa Vang, TP Đà Nẵng",
     ],
     email: "Email: truongluu707@gmail.com",
-    hotline: "Số Điện Thoại: 0906557408",
+    hotline: "Số Điện Thoại: 0904570323",
   },
 ];
 
