@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
-import { Modal, Button, Input, Radio, Form, message, RadioChangeEvent } from 'antd';
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Modal, Button, Input, Radio, Form, message } from 'antd';
+import type { RadioChangeEvent } from 'antd';
+import { usePathname } from 'next/navigation';
 
-const ModalRequest = ({ onClose }: {onClose: () => void}) => {
+const ModalRequest = ({ onClose }: { onClose: () => void }) => {
+  const pathname = usePathname();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    carModel: '',
     contactMethod: 'call',
   });
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient || pathname !== '/') return null;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -23,35 +34,41 @@ const ModalRequest = ({ onClose }: {onClose: () => void}) => {
     });
   };
 
-  const handleSubmit = () => {
-    const { name, phone, carModel, contactMethod } = formData;
+  const handleSubmit = async () => {
+    const { name, phone, contactMethod } = formData;
 
-    if (!name || !phone || !carModel) {
+    if (!name || !phone) {
       message.error('Vui lòng điền đầy đủ thông tin!');
       return;
     }
 
-    const messageText = `
-      Tên: ${name}
-      Số điện thoại: ${phone}
-      Dòng xe: ${carModel}
-      Phương thức liên hệ: ${contactMethod === 'call' ? 'Gọi điện' : 'Nhắn tin Zalo'}
-    `;
+    try {
+      const res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, phone, contactMethod }),
+      });
 
-    // Link Zalo
-    const zaloLink = `https://zalo.me/0904570323?text=${encodeURIComponent(messageText)}`;
+      const data = await res.json();
 
-    // Mở Zalo với thông điệp đã mã hóa
-    window.open(zaloLink, '_blank');
-
-    // Đóng modal sau khi gửi
-    onClose();
+      if (data.success) {
+        message.success('Đã gửi thông tin thành công!');
+        onClose();
+      } else {
+        message.error('Gửi thông tin thất bại!');
+      }
+    } catch (err) {
+      console.error(err);
+      message.error('Có lỗi xảy ra khi gửi!');
+    }
   };
 
   return (
     <Modal
       title="Gửi yêu cầu tư vấn"
-      visible={true}
+      open={true}
       onCancel={onClose}
       footer={[
         <Button key="submit" type="primary" onClick={handleSubmit}>
@@ -68,22 +85,13 @@ const ModalRequest = ({ onClose }: {onClose: () => void}) => {
             placeholder="Nhập tên"
           />
         </Form.Item>
-        
+
         <Form.Item label="Số điện thoại" required>
           <Input
             name="phone"
             value={formData.phone}
             onChange={handleChange}
             placeholder="Nhập số điện thoại"
-          />
-        </Form.Item>
-
-        <Form.Item label="Dòng xe" required>
-          <Input
-            name="carModel"
-            value={formData.carModel}
-            onChange={handleChange}
-            placeholder="Nhập dòng xe"
           />
         </Form.Item>
 
