@@ -1,6 +1,6 @@
 import { Button, Card, Col, Divider, Row } from "antd";
 import Meta from "antd/es/card/Meta";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import car1 from "@assets/image/car/0006_hyundai-creta-2022.jpg";
@@ -15,7 +15,8 @@ import car9 from "@assets/image/car/hyundai-ioniq5-01.jpg";
 import car10 from "@assets/image/car/hyundai-palisade-c-230916_0014_cb3.jpg";
 import car11 from "@assets/image/car/hyundai-santa-fe-2025.png";
 import car12 from "@assets/image/car/venue-xanh-avt.png";
-import { MenuButton } from "../MenuButton";
+import MenuButton from "../MenuButton";
+import ModalRequest from "@/components/ModalRequest";
 
 const imageList = [
   {
@@ -25,7 +26,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 589,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 163 triệu nhận xe</span>,
   },
   {
     id: 2,
@@ -34,7 +34,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 554,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 158 triệu nhận xe</span>,
   },
   {
     id: 3,
@@ -42,18 +41,14 @@ const imageList = [
     url: car3,
     width: 100,
     height: 200,
-    price: <span>Giá từ: 339,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 92 triệu nhận xe</span>,
-  },
+    price: <span>Giá từ: 339,000,000 VNĐ</span>,  },
   {
     id: 4,
     title: "Hyundai New Grand i10 Sedan",
     url: car4,
     width: 100,
     height: 200,
-    price: <span>Giá từ: 358,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 97 triệu nhận xe</span>,
-  },
+    price: <span>Giá từ: 358,000,000 VNĐ</span>,  },
   {
     id: 5,
     title: "Hyundai Stargazer",
@@ -61,7 +56,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 575,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 158 triệu nhận xe</span>,
   },
   {
     id: 6,
@@ -70,7 +64,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 769,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 213 triệu nhận xe</span>,
   },
   {
     id: 7,
@@ -79,7 +72,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 439,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 113 triệu nhận xe</span>,
   },
   {
     id: 8,
@@ -88,7 +80,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 800,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 220 triệu nhận xe</span>,
   },
   {
     id: 9,
@@ -97,7 +88,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 1,275,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 212 triệu nhận xe</span>,
   },
   {
     id: 10,
@@ -106,7 +96,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 1,449,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 388 triệu nhận xe</span>,
   },
   {
     id: 11,
@@ -115,7 +104,6 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 1,069,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 270 triệu nhận xe</span>,
   },
   {
     id: 12,
@@ -124,11 +112,11 @@ const imageList = [
     width: 100,
     height: 200,
     price: <span>Giá từ: 529,000,000 VNĐ</span>,
-    prepay: <span>Trả trước 146 triệu nhận xe</span>,
   },
 ];
 
 export const HomePage = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="container">
         <MenuButton/>
@@ -174,11 +162,7 @@ export const HomePage = () => {
                       {item.price}
                     </div>
                   )}
-                  {item.prepay && (
-                    <div style={{ marginTop: 4, color: "#3f8600" }}>
-                      {item.prepay}
-                    </div>
-                  )}
+                  
                   <div
                     style={{
                       display: "flex",
@@ -195,6 +179,7 @@ export const HomePage = () => {
                         padding: "2px 8px",
                         height: "auto",
                       }}
+                      onClick={() => setShowModal(true)}
                     >
                       BÁO GIÁ LĂN BÁNH
                     </Button>
@@ -214,6 +199,7 @@ export const HomePage = () => {
               </Card>
             </Col>
           ))}
+          {showModal && <ModalRequest onClose={() => setShowModal(false)} />}
         </Row>
       </div>
     </div>
