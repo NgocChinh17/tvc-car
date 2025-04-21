@@ -7,7 +7,7 @@ interface SectionHeaderProps {
 export const TitlePriceCar: React.FC<SectionHeaderProps> = ({title}) => {
   return (
     <>
-    <div style={{ display: "flex", alignItems: "center", margin: "16px 0" }}>
+    <div style={{ display: "flex", alignItems: "center", marginBlock: 16 }}>
         <div
           style={{
             width: "4px",
@@ -16,11 +16,10 @@ export const TitlePriceCar: React.FC<SectionHeaderProps> = ({title}) => {
             marginRight: "10px",
           }}
         />
-        <h4 style={{ color: "#ff6600", fontWeight: "bold", margin: 0 }}>
+        <h4 style={{ color: "#ff6600", fontWeight: "bold", marginBlock: 0 }}>
           <p>{title}</p>
         </h4>
       </div>
-    
     </>
   )
 }
