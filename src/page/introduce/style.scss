@@ -1,5 +1,8 @@
 .title-introduce {
     padding-bottom: 20px;
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
 }
 
 .introduce-wrapper {
