@@ -1,7 +1,7 @@
-import StyledComponentsRegistry from "@/fixClsUiAntd/antd.registry";
 import { FooterPage } from "@/page/Footer";
 import { HeaderPage } from "@/page/Header";
 import { Metadata } from "next";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 import ZaloFloatingButton from "@/components/ChatZalo";
 
@@ -22,12 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
+        <AntdRegistry>
           <HeaderPage />
           {children}
           <ZaloFloatingButton />
           <FooterPage />
-        </StyledComponentsRegistry>
+        </AntdRegistry>
       </body>
     </html>
   );

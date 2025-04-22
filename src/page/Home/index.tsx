@@ -1,95 +1,17 @@
+// 'use client';
 import { Button, Card, Col, Divider, Row } from "antd";
 import Meta from "antd/es/card/Meta";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import MenuButton from "../MenuButton";
 import ModalRequest from "@/components/ModalRequest";
-
-// image
-import car1 from "@assets/image/car/0006_hyundai-creta-2022.jpg";
-import car2 from "@assets/image/car/huyndai-elantra-1022_0005_elantra-2022.png";
-import car3 from "@assets/image/car/huyndai-grand-i10-hb-new-1.jpg";
-import car4 from "@assets/image/car/huyndai-grand-i10-sedan-new-1.jpg";
-import car5 from "@assets/image/car/huyndai-Stargazer-1022b-5.png";
-import car6 from "@assets/image/car/huyndai-tucson-2022_0008_Tucson-2022-1.jpg";
-import car7 from "@assets/image/car/hyundai-accent-240530-mx02a.jpg";
-import car8 from "@assets/image/car/hyundai-custin-c-230915.jpg";
-import car10 from "@assets/image/car/hyundai-palisade-c-230916_0014_cb3.jpg";
-import car11 from "@assets/image/car/hyundai-santa-fe-2025.png";
-import car12 from "@assets/image/car/venue-xanh-avt.png";
-
-const imageList = [
-  {
-    id: 1,
-    title: "Hyundai Creta",
-    url: car1,
-    price: 699000000,
-  },
-  {
-    id: 2,
-    title: "Hyundai Elantra",
-    url: car2,
-    price: 769000000,
-  },
-  {
-    id: 3,
-    title: "Hyundai New Grand i10 Hatchback",
-    url: car3,
-    price: 435000000,
-  },
-  {
-    id: 4,
-    title: "Hyundai New Grand i10 Sedan",
-    url: car4,
-    price: 455000000,
-  },
-  {
-    id: 5,
-    title: "Hyundai Stargazer",
-    url: car5,
-    price: 599000000,
-  },
-  {
-    id: 6,
-    title: "Hyundai Tucson",
-    url: car6,
-    price: 979000000,
-  },
-  {
-    id: 7,
-    title: "Hyundai Accent",
-    url: car7,
-    price: 569000000,
-  },
-  {
-    id: 8,
-    title: "Hyundai Custin",
-    url: car8,
-    price: 999000000,
-  },
-  {
-    id: 10,
-    title: "Hyundai Palisade",
-    url: car10,
-    price: 999000000,
-  },
-  {
-    id: 11,
-    title: "Hyundai Santafe",
-    url: car11,
-    price: 1069000000,
-  },
-  {
-    id: 12,
-    title: "Hyundai Venue",
-    url: car12,
-    price: 539000000,
-  },
-];
+import { imageList } from "@/components/data/cars";
 
 export const HomePage = () => {
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
   return (
     <div className="container header-page">
       <MenuButton />
@@ -147,7 +69,7 @@ export const HomePage = () => {
                       type="primary"
                       danger
                       size="small"
-                      style={{ fontSize: 12 }}
+                      style={{ fontSize: 10, fontWeight: 500}}
                       onClick={() => setShowModal(true)}
                     >
                       BÁO GIÁ LĂN BÁNH
@@ -155,7 +77,8 @@ export const HomePage = () => {
                     <Button
                       type="primary"
                       size="small"
-                      style={{ fontSize: 12 }}
+                      style={{ fontSize: 10, fontWeight: 500}}
+                      onClick={() => router.push(`/car/${item.id}`)}
                     >
                       XEM CHI TIẾT
                     </Button>

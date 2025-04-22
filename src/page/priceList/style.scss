@@ -4,6 +4,13 @@
 
 .title-header-price {
     text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: red;
+
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+    }
 }
 
 .textAndNumber-advise {
