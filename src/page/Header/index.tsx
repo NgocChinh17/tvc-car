@@ -36,58 +36,60 @@ export const HeaderPage = () => {
   const onClose = () => setOpen(false);
 
   return (
-    <div className="header">
-      <div className="container">
-        <div className="menu-box">
-          <Link href="/">
-            <Image className="image-logo" src={Logo} alt="Hyundai Logo" />
-          </Link>
+    <div className="header-page">
+      <div className="header">
+        <div className="container">
+          <div className="menu-box">
+            <Link href="/">
+              <Image className="image-logo" src={Logo} alt="Hyundai Logo" />
+            </Link>
 
-          <div className="title-logo pc">Hyundai Phạm Hùng</div>
+            <div className="title-logo pc">Hyundai Phạm Hùng</div>
 
-          {/* chỉ hiển thị khi mobile */}
-          {isMobile && (
-            <Button
-              className="menu-mobile-button mb"
-              type="text"
-              icon={<MenuOutlined style={{ fontSize: "24px" }} />}
-              onClick={showDrawer}
-            />
-          )}
-        </div>
+            {/* chỉ hiển thị khi mobile */}
+            {isMobile && (
+              <Button
+                className="menu-mobile-button mb"
+                type="text"
+                icon={<MenuOutlined style={{ fontSize: "24px" }} />}
+                onClick={showDrawer}
+              />
+            )}
+          </div>
 
-        <div className="menu-list pc">
-          <Menu
-            className="render-menu"
-            mode="horizontal"
-            selectedKeys={[pathname]}
-            items={listMenu.map((item) => ({
-              key: item.key,
-              label: <Link href={item.path}>{item.label}</Link>,
-            }))}
-          />
-        </div>
-
-        {/* Drawer chỉ hiển thị nếu là mobile */}
-        {isMobile && (
-          <Drawer
-            width={250}
-            title="Menu"
-            placement="right"
-            onClose={onClose}
-            open={open}
-          >
+          <div className="menu-list pc">
             <Menu
-              mode="vertical"
+              className="render-menu"
+              mode="horizontal"
               selectedKeys={[pathname]}
               items={listMenu.map((item) => ({
                 key: item.key,
                 label: <Link href={item.path}>{item.label}</Link>,
               }))}
-              onClick={onClose}
             />
-          </Drawer>
-        )}
+          </div>
+
+          {/* Drawer chỉ hiển thị nếu là mobile */}
+          {isMobile && (
+            <Drawer
+              width={250}
+              title="Menu"
+              placement="right"
+              onClose={onClose}
+              open={open}
+            >
+              <Menu
+                mode="vertical"
+                selectedKeys={[pathname]}
+                items={listMenu.map((item) => ({
+                  key: item.key,
+                  label: <Link href={item.path}>{item.label}</Link>,
+                }))}
+                onClick={onClose}
+              />
+            </Drawer>
+          )}
+        </div>
       </div>
     </div>
   );

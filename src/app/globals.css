@@ -24,3 +24,12 @@
 .mb {
   display: none;
 }
+
+.breadcrumb {
+  font-size: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+:where(.css-dev-only-do-not-override-1d4w9r2).ant-breadcrumb .anticon {
+  font-size: 16px !important;
+}

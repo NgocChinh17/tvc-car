@@ -1,0 +1,46 @@
+.price-wrapper {
+    font-size: small;
+}
+
+.title-header-price {
+    text-align: center;
+}
+
+.textAndNumber-advise {
+    font-size: 18px;
+    font-weight: 500;
+    @media screen and (max-width: 768px) {
+        font-size: small;
+    }
+}
+
+.car-image {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.button-call {
+    margin-left: 10px;
+    @media screen and (max-width: 768px) {
+        margin-left: 10px;
+    }
+}
+
+.advise-bottom-wrapper {
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    background-color: #f5f5f5;
+    line-height: 2;
+    border-radius: 10px;
+    @media screen and (max-width: 768px) {
+        font-size: small;
+    }
+}
+
+.title-advise-person {
+    color: red;
+    font-weight: 600;
+    margin-left: 10px;
+}

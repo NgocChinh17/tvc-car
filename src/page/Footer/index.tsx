@@ -1,6 +1,8 @@
 import { WhyHyundai } from "@/components/WhyHyundai";
 import React from "react";
 
+import './style.scss'
+
 const footerData = [
   {
     title: "HYUNDAI PHẠM HÙNG ĐÀ NẴNG",
@@ -17,24 +19,14 @@ export const FooterPage = () => {
   return (
     <>
       <WhyHyundai />
-
-      <div
-        style={{ paddingBlock: 30, backgroundColor: "#202020", color: "white" }}
-      >
+      <div className="footer-wrapper">
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: 20 }}>
+          <div className="title-footer">
             <h2 style={{ marginBottom: 10 }}>HYUNDAI PHẠM HÙNG</h2>
             <h2>ƯU ĐÃ KHỦNG - QUÀ GIÁ TRỊ</h2>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-              lineHeight: 2,
-            }}
-          >
+          <div className="content-footer">
             {footerData.map((section, index) => (
               <div key={index} style={{ flex: "1 1 45%" }}>
                 <p style={{ fontWeight: 400 }}>{section.title}</p>
@@ -47,8 +39,8 @@ export const FooterPage = () => {
             ))}
           </div>
 
-          <p style={{ textAlign: "center", marginTop: 40 }}>
-            © 2025 Hyundai Phạm Hùng Đà Nẵng. Hotline: 0906 557 408
+          <p className="bottom-footer">
+            © 2025 Hyundai Phạm Hùng Đà Nẵng
           </p>
         </div>
       </div>

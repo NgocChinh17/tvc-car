@@ -24,6 +24,7 @@ const columns: TableProps<DataType>["columns"] = [
   {
     title: "Giá xe",
     dataIndex: "price",
+    width: 150,
     render: (price: number) => (
       <strong style={{ color: "#333" }}>
         {new Intl.NumberFormat("vi-VN").format(price)} VNĐ
@@ -34,14 +35,14 @@ const columns: TableProps<DataType>["columns"] = [
 
 export const CarPriceTable: React.FC<CarPriceTableProps> = ({ title, data }) => {
   return (
-    <div style={{ maxWidth: "700px", margin: "40px auto" }}>
-      <h4 style={{ textAlign: "center", marginBottom: 20 }}>{title}</h4>
+    <div className="table-wrapper">
+      <h4 className="title-header-table">{title}</h4>
       <Table<DataType>
         className="custom-car-price-table"
         columns={columns}
         dataSource={data}
         pagination={false}
-        size="large"
+        size="small"
       />
     </div>
   );

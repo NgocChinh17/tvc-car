@@ -1,6 +1,8 @@
 import { HomeOutlined } from "@ant-design/icons";
-import { Breadcrumb} from "antd";
+import { Breadcrumb } from "antd";
 import React from "react";
+
+import "./style.scss";
 
 const Introduce = () => {
   return (
@@ -8,6 +10,7 @@ const Introduce = () => {
       {/* Phần breadcrumb */}
       <div className="container-header">
         <Breadcrumb
+          className="breadcrumb"
           items={[
             {
               href: "/",
@@ -18,7 +21,9 @@ const Introduce = () => {
             },
           ]}
         />
-        <h3 style={{ paddingBlock: 20 }}>Đang cập nhật</h3>
+        <div className="introduce-wrapper">
+          <h3 className="title-introduce">Đang cập nhật</h3>
+        </div>
       </div>
     </>
   );

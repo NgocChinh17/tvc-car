@@ -5,10 +5,11 @@ import { Breadcrumb, Button, Space } from "antd";
 import { HomeOutlined, PhoneOutlined } from "@ant-design/icons";
 import { TitlePriceCar } from "@/components/titlePriceCar";
 import { CarPriceTable } from "@/components/TablePriceList";
-import type { StaticImageData } from 'next/image';
+import type { StaticImageData } from "next/image";
 
+import "./style.scss";
 
-// Ảnh đại diện tạm thời    
+// Ảnh đại diện tạm thời
 import grandi10 from "@assets/image/car/huyndai-grand-i10-hb-new-1.jpg";
 import creta from "@assets/image/car/0006_hyundai-creta-2022.jpg";
 import elantra from "@assets/image/car/huyndai-elantra-1022_0005_elantra-2022.png";
@@ -137,9 +138,9 @@ const carPriceList: CarModel[] = [
     phone: "0904570323",
     data: [
       { key: "1", name: "Palisade Prestige (6 chỗ)", price: 999000000 },
-      { key: "2", name: "Palisade Prestige  (7 chỗ)", price: 950000000 },
-      { key: "3", name: "Palisade Exclusive  Palisade", price: 915000000 },
-      { key: "4", name: "Palisade Exclusive  (7 chỗ)", price: 820000000 },
+      { key: "2", name: "Palisade Prestige (7 chỗ)", price: 950000000 },
+      { key: "3", name: "Palisade Exclusive Palisade", price: 915000000 },
+      { key: "4", name: "Palisade Exclusive (7 chỗ)", price: 820000000 },
     ],
   },
   {
@@ -157,66 +158,73 @@ const carPriceList: CarModel[] = [
 
 const PriceTitle = () => {
   return (
-    <div style={{marginBottom: 20}}>
-    
-    <div className="container">
-      <div className="container-header" style={{ marginBlock: 20 }}>
-        <Breadcrumb
-          items={[
-            {
-              href: "/",
-              title: <HomeOutlined />,
-            },
-            {
-              title: "Bảng Giá",
-            },
-          ]}
-        />
-      </div>
-
-      <h3 style={{ textAlign: "center" }}>
-        Bảng giá xe Hyundai 2025 tại Hyundai Phạm Hùng
-      </h3>
-
-      {carPriceList.map((car, index) => (
-        <div key={index}>
-          <TitlePriceCar title={car.title} />
-          <Space>
-            <p style={{ fontSize: 18, fontWeight: 500 }}>
-              Anh / Chị gọi để được tư vấn:
-            </p>
-            <Button style={{marginLeft: 10}} type="primary" danger icon={<PhoneOutlined />}
-               onClick={() => (window.location.href = `tel:${car.phone}`)}
-            >
-              {car.phone}
-            </Button>
-          </Space>
-          <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-            <Image
-              src={car.image}
-              alt={car.tableTitle}
-              layout="responsive"
-              width={700}
-              height={450}
-            />
-          </div>
-          <CarPriceTable title={car.tableTitle} data={car.data} />
+    <div style={{ marginBottom: 20 }}>
+      <div className="container">
+        <div className="container-header">
+          <Breadcrumb
+            className="breadcrumb"
+            items={[
+              {
+                href: "/",
+                title: <HomeOutlined />,
+              },
+              {
+                title: "Bảng Giá",
+              },
+            ]}
+          />
         </div>
-      ))}
+        <div className="price-wrapper">
+          <h3 className="title-header-price">
+            Bảng giá xe Hyundai 2025 tại Hyundai Phạm Hùng
+          </h3>
 
-      <div style={{ fontSize: 18, fontWeight: 500, border: "1px solid #e5e5e5", padding: 20, backgroundColor: "#f5f5f5", lineHeight: 2, borderRadius: 10 }}>
-        <p>
-          Anh chị muốn được tư vấn thêm về xe Hyundai và khuyến mãi mình mong muốn.
-        </p>
-        <p>Quý khách vui lòng liên hệ:</p>
-        <p>
-          Phụ trách bán hàng:
-          <span style={{ color: "red", fontWeight: 600 }}>
-            Mr. Quang Trường
-          </span>
-        </p>
+          {carPriceList.map((car, index) => (
+            <div key={index}>
+              <TitlePriceCar title={car.title} />
+              <Space>
+                <div className="textAndNumber-advise">
+                  Anh / Chị gọi để được tư vấn:
+                </div>
+                <Button
+                  className="button-call"
+                  size="small"
+                  type="primary"
+                  danger
+                  icon={<PhoneOutlined />}
+                  onClick={() => (window.location.href = `tel:${car.phone}`)}
+                >
+                  {car.phone}
+                </Button>
+              </Space>
+              <div className="car-image">
+                <Image
+                  src={car.image}
+                  alt={car.tableTitle}
+                  layout="responsive"
+                  width={700}
+                  height={450}
+                />
+              </div>
+              <CarPriceTable title={car.tableTitle} data={car.data} />
+            </div>
+          ))}
+
+          <div className="advise-bottom-wrapper">
+            <p>
+              Anh chị muốn được tư vấn thêm về xe Hyundai và khuyến mãi mình
+              mong muốn.
+            </p>
+            <p>Quý khách vui lòng liên hệ:</p>
+            <p>
+              Phụ trách bán hàng:
+              <span className="title-advise-person">
+                Mr. Quang Trường
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

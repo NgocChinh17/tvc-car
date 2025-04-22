@@ -6,13 +6,20 @@
 }
 
 .header {
-    position: sticky;
+    position: fixed;
+    width: 100% !important;
     top: 0;
     z-index: 999;
     background: white;
     border-bottom: 1px solid #e5e5e5;
-    width: 100% !important;
-    margin-bottom: 30px;
+}
+
+.header-page {
+    margin-bottom: 120px;
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 70px !important;
+    }
 }
 
 .home-menu-item {

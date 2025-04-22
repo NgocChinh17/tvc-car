@@ -1,14 +1,30 @@
-.custom-car-price-table .ant-table-thead > tr > th {
-    background-color: #f0f2f5; /* Màu nền header */
-    color: #333;
-    font-weight: bold;
+.custom-car-price-table .ant-table-thead>tr>th {
+  background-color: #f0f2f5;
+  /* Màu nền header */
+  color: #333;
+  font-weight: bold;
+}
+
+.custom-car-price-table .ant-table-tbody>tr:nth-child(odd) {
+  background-color: #fafafa;
+  /* Màu nền cho hàng lẻ */
+}
+
+.custom-car-price-table .ant-table-tbody>tr:hover {
+  background-color: #e6f7ff;
+  /* Màu khi hover */
+}
+
+.table-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+.title-header-table {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
   }
-  
-  .custom-car-price-table .ant-table-tbody > tr:nth-child(odd) {
-    background-color: #fafafa; /* Màu nền cho hàng lẻ */
-  }
-  
-  .custom-car-price-table .ant-table-tbody > tr:hover {
-    background-color: #e6f7ff; /* Màu khi hover */
-  }
-  
+}
