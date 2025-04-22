@@ -70,7 +70,7 @@ export const WhyHyundai = () => {
         style={{
           background: "#d53c1c",
           color: "#fff",
-          padding: "40px 0",
+          paddingBlock: 40,
           marginBottom: 40,
         }}
       >
@@ -136,7 +136,7 @@ export const WhyHyundai = () => {
                 <div
                   style={{
                     background: "#fff",
-                    padding: 20,
+                    paddingBlock: 20,
                     borderRadius: 10,
                     boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
                     textAlign: "center",

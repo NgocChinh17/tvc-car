@@ -1,9 +1,18 @@
 import StyledComponentsRegistry from "@/fixClsUiAntd/antd.registry";
 import { FooterPage } from "@/page/Footer";
 import { HeaderPage } from "@/page/Header";
+import { Metadata } from "next";
 
-import '../../app/globals.css'
 import ZaloFloatingButton from "@/components/ChatZalo";
+
+import "../../app/globals.css";
+
+export const metadata: Metadata = {
+  title: "Hyundai Đà Nẵng",
+  icons: {
+    icon: "../favicon.ico",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -12,14 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <head>
-        <title>Hyundai Đà Nẵng</title>
-      </head>
       <body>
         <StyledComponentsRegistry>
           <HeaderPage />
           {children}
-          <ZaloFloatingButton/>
+          <ZaloFloatingButton />
           <FooterPage />
         </StyledComponentsRegistry>
       </body>

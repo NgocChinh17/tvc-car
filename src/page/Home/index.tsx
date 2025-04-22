@@ -176,8 +176,6 @@ export const HomePage = () => {
                       size="small"
                       style={{
                         fontSize: 12,
-                        padding: "2px 8px",
-                        height: "auto",
                       }}
                       onClick={() => setShowModal(true)}
                     >
@@ -188,8 +186,6 @@ export const HomePage = () => {
                       size="small"
                       style={{
                         fontSize: 12,
-                        padding: "2px 8px",
-                        height: "auto",
                       }}
                     >
                       XEM CHI TIẾT
