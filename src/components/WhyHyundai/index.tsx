@@ -1,3 +1,4 @@
+"use client";
 import {
   EditOutlined,
   FileTextOutlined,
@@ -7,29 +8,8 @@ import {
   ToolOutlined,
 } from "@ant-design/icons";
 import { Button, Col, Divider, Row, Space } from "antd";
-import React from "react";
-
-// Dữ liệu động cho phần giới thiệu
-const supportItems = [
-  {
-    type: "text",
-    title: "HỖ TRỢ MUA XE TRẢ GÓP",
-    subtitle: "LÃI SUẤT THẤP - THỦ TỤC NHANH CHÓNG",
-  },
-  {
-    type: "buttons",
-    buttons: [
-      {
-        icon: <PhoneOutlined />,
-        text: "0904570323",
-      },
-      {
-        icon: <EditOutlined />,
-        text: "Đăng ký",
-      },
-    ],
-  },
-];
+import React, { useState } from "react";
+import ModalRequest from "../ModalRequest";
 
 // Dữ liệu động cho phần "Vì sao chọn Hyundai"
 const whyChooseHyundai = [
@@ -63,6 +43,37 @@ const whyChooseHyundai = [
 ];
 
 export const WhyHyundai = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  // Dữ liệu động cho phần giới thiệu
+  const supportItems = [
+    {
+      type: "text",
+      title: "HỖ TRỢ MUA XE TRẢ GÓP",
+      subtitle: "LÃI SUẤT THẤP - THỦ TỤC NHANH CHÓNG",
+    },
+    {
+      type: "buttons",
+      buttons: [
+        {
+          icon: <PhoneOutlined />,
+          text: <a href="tel:0904570323">0904570323</a>,
+        },
+        {
+          icon: <EditOutlined />,
+          text: (
+            <span
+              onClick={() => setShowModal(true)}
+              style={{ cursor: "pointer", color: "#fff" }}
+            >
+              Đăng ký
+            </span>
+          ),
+        },
+      ],
+    },
+  ];
+
   return (
     <>
       {/* Hỗ trợ mua xe trả góp */}
@@ -168,6 +179,7 @@ export const WhyHyundai = () => {
           </Row>
         </div>
       </div>
+      {showModal && <ModalRequest onClose={() => setShowModal(false)} />}
     </>
   );
 };

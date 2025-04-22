@@ -69,7 +69,7 @@ export const HomePage = () => {
                       type="primary"
                       danger
                       size="small"
-                      style={{ fontSize: 10, fontWeight: 500}}
+                      style={{ fontSize: 11, fontWeight: 500}}
                       onClick={() => setShowModal(true)}
                     >
                       BÁO GIÁ LĂN BÁNH
@@ -77,7 +77,7 @@ export const HomePage = () => {
                     <Button
                       type="primary"
                       size="small"
-                      style={{ fontSize: 10, fontWeight: 500}}
+                      style={{ fontSize: 11, fontWeight: 500}}
                       onClick={() => router.push(`/car/${item.id}`)}
                     >
                       XEM CHI TIẾT
