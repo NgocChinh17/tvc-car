@@ -136,7 +136,7 @@ export const WhyHyundai = () => {
                 <div
                   style={{
                     background: "#fff",
-                    paddingBlock: 20,
+                    padding: 20,
                     borderRadius: 10,
                     boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
                     textAlign: "center",
