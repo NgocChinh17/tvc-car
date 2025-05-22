@@ -41,6 +41,7 @@ export const HomePage = () => {
                       height: "auto",
                       objectFit: "cover",
                     }}
+                    onClick={() => router.push(`/car/${item.id}`)}
                   />
                 }
               >
@@ -69,15 +70,13 @@ export const HomePage = () => {
                       type="primary"
                       danger
                       size="small"
-                      style={{ fontSize: 11, fontWeight: 500}}
                       onClick={() => setShowModal(true)}
                     >
-                      BÁO GIÁ LĂN BÁNH
+                      BÁO GIÁ XE
                     </Button>
                     <Button
                       type="primary"
                       size="small"
-                      style={{ fontSize: 11, fontWeight: 500}}
                       onClick={() => router.push(`/car/${item.id}`)}
                     >
                       XEM CHI TIẾT

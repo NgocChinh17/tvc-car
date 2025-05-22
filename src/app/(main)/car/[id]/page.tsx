@@ -1,5 +1,4 @@
 "use client";
-// import { useState } from "react";
 import { imageList } from "@/components/data/cars";
 import { CheckCircleTwoTone, HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb, Col, Image, Row } from "antd";
@@ -9,14 +8,11 @@ import "./style.scss";
 
 import bannerwebfb7 from "@assets/imageDetail/bannerwebfb7.jpg";
 import { CarPriceTable } from "@/components/TablePriceList";
-// import ModalRequest from "@/components/ModalRequest";
 
 export default function CarDetailPage({ params }: { params: { id: string } }) {
-  // const [showModal, setShowModal] = useState(false);
   const car = imageList.find((item) => item.id === parseInt(params.id));
 
   if (!car) return notFound();
-
   return (
     <div className="container">
       <Breadcrumb
@@ -91,12 +87,6 @@ export default function CarDetailPage({ params }: { params: { id: string } }) {
               </div>
             </div>
           </div>
-          {/* <div style={{ marginTop: 16 }}>
-            <span>Đăng ký báo giá hoặc lái thử tại nhà miễn phí: </span>
-            <Button type="primary" danger size="small" onClick={() => setShowModal(true)}>
-              Yêu cầu báo giá nhanh
-            </Button>
-          </div> */}
         </Col>
       </Row>
 
@@ -146,9 +136,99 @@ export default function CarDetailPage({ params }: { params: { id: string } }) {
       <div style={{ marginTop: 32 }}>
         <CarPriceTable title={car.title} data={car?.data ?? []} />
       </div>
+      {car.carFront || car.bodyCar || car.carInterior || car.amenitiesCar || car.carEngine ? (
+        <div style={{ lineHeight: 2 }}>
+        <h3>Chi tiết sản phẩm: </h3>
+        <h4>Thông tin về xe {car.title}:</h4>
+        <div>
+          <div style={{ textIndent: 20 }}>
+            {car?.carFront?.introduceCarFont}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBlock: 16,
+            }}
+          >
+            {car?.carFront?.imageCarFront && (
+              <Image
+                src={car?.carFront?.imageCarFront.src}
+                alt="carFront"
+                preview={false}
+              />
+            )}
+          </div>
+
+          <h4>Thân xe:</h4>
+          <div style={{ textIndent: 20 }}>{car?.bodyCar?.imageCarLights}</div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBlock: 16,
+            }}
+          >
+            {car?.bodyCar?.heatSinkCar && (
+              <Image
+                src={car?.bodyCar?.heatSinkCar.src}
+                alt="carFront"
+                preview={false}
+              />
+            )}
+          </div>
+
+          <h4>Bên hông xe:</h4>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBlock: 16,
+            }}
+          >
+            {car?.carInterior?.imageCarInterior && (
+              <Image
+                src={car?.carInterior?.imageCarInterior.src}
+                alt="carInterior"
+                preview={false}
+              />
+            )}
+          </div>
+
+          <h4>Sau xe:</h4>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginBlock: 16,
+              }}
+            >
+              {car?.amenitiesCar?.imageAmenitiesCar && (
+                <Image
+                  src={car?.amenitiesCar?.imageAmenitiesCar.src}
+                  alt="amenitiesCar"
+                  preview={false}
+                />
+              )}
+            </div>
+
+            <div>
+              <h4>Bên trong xe:</h4>
+              <div style={{ display: "flex", justifyContent: "center", marginBlock: 16 }}>
+                {car?.carEngine?.imageCarEngine && (
+                  <Image
+                    src={car?.carEngine?.imageCarEngine.src}
+                    alt="carEngine"
+                    preview={false}
+                  />
+                )}
+              </div>
+            </div>
+        </div>
+      </div>
+      ): " "}
 
       {/* Modal nằm ngoài mọi layout khác */}
-      {/* {showModal && <ModalRequest onClose={() => setShowModal(false)} />} */}
     </div>
   );
 }
