@@ -77,12 +77,13 @@ const ModalRequest = ({ onClose }: { onClose: () => void }) => {
       ]}
     >
       <Form layout="vertical">
-        <Form.Item label="Tên" required>
+        <Form.Item label="Tên" required>  
           <Input
             name="name"
             value={formData.name}
             onChange={handleChange}
             placeholder="Nhập tên"
+            style={{ fontSize: '16px' }}
           />
         </Form.Item>
 
@@ -92,6 +93,7 @@ const ModalRequest = ({ onClose }: { onClose: () => void }) => {
             value={formData.phone}
             onChange={handleChange}
             placeholder="Nhập số điện thoại"
+            style={{ fontSize: '16px' }}
           />
         </Form.Item>
 
