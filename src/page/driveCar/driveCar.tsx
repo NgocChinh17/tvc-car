@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Breadcrumb } from "antd";
 import Image from "next/image";
-import contactImg from "@/assets/avatar/avatar.jpg";
+// import contactImg from "@/assets/avatar/avatar.jpg";
 import Link from "next/link";
 import { HomeOutlined } from "@ant-design/icons";
 
@@ -62,7 +62,7 @@ const DriveCar = () => {
           <Col xs={24} md={8}>
             <div className="right-container">
               <Image
-                src={contactImg}
+                src={"/src/assets/avatar/avatar.png"}
                 alt="Mr.Quang Trường"
                 width={120}
                 height={120}
